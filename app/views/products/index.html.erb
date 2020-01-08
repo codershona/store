@@ -1,35 +1,39 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Products</h1>
+<div class="row">
+  <!-- Left Form -->
+  <div class="col-md-6">
+    <div class="panel panel-primary">
+      <div class="panel-heading">Panel Primary</div>
+      <div class="panel-body">
+    <h1>Left Store Form</h1>
+   <%= simple_form_for @product do |f| %>
+    <%= f.input :name, required: true, placeholder: "Write your full-name" %>
+    <%= f.input :description, hint: "Be short no more less than 100 words." %>
+    <%= f.input :price, input_html: { value: '30'} %>
+    <%= f.input :color, collection: ["red","green","blue","yellow","pink","Salmon pink","black","orange"] %>
+    <%= f.input :quantity %>
+    <%= f.button :submit %>
+     <% end %>
+   </div>
+  </div>
+  </div>
+ <!-- Right Form -->
+  <div class="col-md-6">
+    <div class="panel panel-success">
+      <div class="panel-heading">Panel Success</div>
+      <div class="panel-body">
+           <%= simple_form_for @product, html: { class: 'form-inline' } do |f| %>
+    <%= f.input :name, label:false, required: true, placeholder: "Write your full-name" %>
+    <div class="input-group">
+      <div class="input-group-addon">$</div>
+          <%= f.input :price, label:false, input_html: { value: '30'} %>
+    </div>
+    </br></br>
+     <%= f.submit "Create Product" %>
+     <% end %>
+      </div>
+    </div>
+  </div>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Price</th>
-      <th>Color</th>
-      <th>Quantity</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @products.each do |product| %>
-      <tr>
-        <td><%= product.name %></td>
-        <td><%= product.description %></td>
-        <td><%= product.price %></td>
-        <td><%= product.color %></td>
-        <td><%= product.quantity %></td>
-        <td><%= link_to 'Show', product %></td>
-        <td><%= link_to 'Edit', edit_product_path(product) %></td>
-        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Product', new_product_path %>
