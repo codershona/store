@@ -1,24 +1,14 @@
+
 # README
+## Project: Store FORMS
+## Product-Form App.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Builded by Falguni Islam(Software Developer)
 
-Things you may want to cover:
 
-* Ruby version
+ # Run 
+   
+   ` rails s  `
 
-* System dependencies
+Then visit (http://localhost:3000/students/new) in the browser to see the product-form.
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
