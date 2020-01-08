@@ -10,5 +10,5 @@
    
    ` rails s  `
 
-Then visit (http://localhost:3000/students/new) in the browser to see the product-form.
+Then visit (http://localhost:3000) in the browser to see the product-form.
 
